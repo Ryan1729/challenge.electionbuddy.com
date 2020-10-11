@@ -10,6 +10,14 @@ class Election < ApplicationRecord
   end
 
   def visibility=(value)
+    audit_events.create(
+      :user_id=>user_id,
+      :column_name=>"settings.visibility",
+      :table_name=>"elections",
+      :old_value=>visibility,
+      :new_value=>value
+    )
+  
     settings[:visibility] = value
   end
 end

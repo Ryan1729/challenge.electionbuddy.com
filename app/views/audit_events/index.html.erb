@@ -1,8 +1,12 @@
 <h1>Audit Log</h1>
-<tbody>
-    <% @audit_events.each do |post| %>
-      <tr>
-        <td> User <%= audit_events.user_id %> changed column <%= audit_events.column_name %> on table <%= audit_events.table_name %> from &quot;<%= audit_events.old_value %>&quot; to &quot;<%= audit_events.new_value %>&quot;</td>
-      </tr>
-    <% end %>
-</tbody>
+<table>
+    <tbody>
+        <% @audit_events.each do |event| %>
+          <tr>
+            <td>
+                User <%= event.user_id %> changed column <%= event.column_name %> on table <%= event.table_name %> from &quot;<%= event.old_value %>&quot; to &quot;<%= event.new_value %>&quot;
+            </td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>
