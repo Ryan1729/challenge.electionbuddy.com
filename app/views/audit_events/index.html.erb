@@ -4,7 +4,7 @@
         <% @audit_events.each do |event| %>
           <tr>
             <td>
-                User <%= event.user_id %> changed column <%= event.column_name %> on table <%= event.table_name %> from &quot;<%= event.old_value %>&quot; to &quot;<%= event.new_value %>&quot;
+                At <%= event.created_at %> User <%= event.user_id %> changed column <%= event.column_name %> on table <%= event.table_name %> from &quot;<%= event.old_value %>&quot; to &quot;<%= event.new_value %>&quot;
             </td>
           </tr>
         <% end %>
