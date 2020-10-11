@@ -24,3 +24,13 @@
 * Make an `audit_events` table
 * Make an index on election id for the `audit_events` table
 * display the entries from the `audit_events` table on the audit page
+
+# Future Ideas
+* Can we find a reasonable way to avoid having to give the table name explicitly?
+* If we add more fields than visibilty to the elections settings in the future, we may want to serialize the hash in a better way.
+    * JSON?
+    * Maybe add a `value_type` column that would indicate the type of the `new_value` column, so we know how to deserialize it.
+* Nicer UI in general
+    * Map user id to name and display just the name.
+    * Add links to the items that were logged?
+    * Do we want to filter out the creation events? Or maybe we can say something like "User U created a new blah"?
